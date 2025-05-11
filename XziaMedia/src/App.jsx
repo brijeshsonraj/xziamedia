@@ -46,7 +46,7 @@ function App() {
       {/* Content with black overlay */}
       <div className="relative z-20  text-white font-sans">
         {/* Hero Section */}
-        <section className=" min-h-dvh flex flex-col md:flex-row items-center justify-between py-16 px-8 md:px-16 lg:px-24">
+        <section className="  flex flex-col md:flex-row items-center justify-between py-16 px-8 md:px-16 lg:px-24">
           <div className="md:w-5/12 flex justify-center mb-12 md:mb-0">
             <div className="border-white relative w-96 h-[35em] rounded-[40px] overflow-hidden shadow-lg border border-gray-700">
               <video
@@ -82,7 +82,7 @@ function App() {
         </section>
 
         {/* About Section */}
-        <section className="min-h-dvh py-20 px-8 md:px-16 lg:px-24 ">
+        <section className="py-20 px-8 md:px-16 lg:px-24 ">
           <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto gap-12">
             <div className="md:w-1/2 lg:w-5/12">
               <h2 className="text-5xl font-bold mb-6">About Me</h2>
@@ -107,7 +107,7 @@ function App() {
         </section>
 
         {/* Work Samples Section */}
-        <section id="sample-work" className="min-h-dvh py-16 px-4  text-white">
+        <section id="sample-work" className=" py-16 px-4  text-white">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
             {/* Left Column - Title */}
             <div className="md:w-1/3">
@@ -190,7 +190,7 @@ function App() {
             </div>
           </div>
         </section>
-        <div className=" text-white min-h-screen flex items-center justify-center p-4">
+        <div className=" text-white  flex items-center justify-center p-4">
           <div className="max-w-6xl w-full flex flex-col lg:flex-row">
             {/* Left side - Title and Social Profiles */}
             <div className="lg:w-1/2 space-y-8 mb-8 lg:mb-0">
@@ -239,7 +239,7 @@ function App() {
         </div>
 
         {/* Experience Section */}
-        <div className="text-white min-h-screen flex items-center justify-center  p-4">
+        <div className="text-white  flex items-center justify-center  p-4">
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-between">
             {/* Left side - Spiral Graphic */}
             <div className="flex justify-center md:justify-end mb-8 md:mb-0 w-full">
@@ -279,7 +279,7 @@ function App() {
         </div>
 
         {/* Contact Section */}
-        <div className="text-white min-h-screen flex items-center justify-center p-4">
+        <div className="text-white  flex items-center justify-center p-4">
           <div className="max-w-6xl w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Top Left - Text */}
