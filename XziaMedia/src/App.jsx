@@ -323,7 +323,7 @@ function App() {
                   <div className="inline-block ">
                     <video
                       src="src/assets/Search motion background.mp4"
-                      className="rounded-xl border-white max-w-lg h-60 md:h-72 mb-4 object-cover "
+                      className="rounded-xl border-white max-w-lg h-60 md:h-60 mb-4 object-cover "
                       autoPlay
                       loop
                       muted
