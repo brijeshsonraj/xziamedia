@@ -57,6 +57,7 @@ function App() {
                 muted
                 playsInline
                 controls
+                controlsList="nofullscreen"
               />
             </div>
           </div>
@@ -132,6 +133,7 @@ function App() {
                     muted
                     playsInline
                     controls
+                    controlsList="nofullscreen"
                   />
                 </div>
               </div>
@@ -150,6 +152,7 @@ function App() {
                     muted
                     playsInline
                     controls
+                    controlsList="nofullscreen"
                   />
                 </div>
               </div>
@@ -168,6 +171,7 @@ function App() {
                     muted
                     playsInline
                     controls
+                    controlsList="nofullscreen"
                   />
                 </div>
               </div>
@@ -186,6 +190,7 @@ function App() {
                     muted
                     playsInline
                     controls
+                    controlsList="nofullscreen"
                   />
                 </div>
               </div>
@@ -206,7 +211,7 @@ function App() {
                 <BounceCards
                   className="custom-bounceCards"
                   images={images}
-                  containerWidth={500}
+                  containerWidth={250}
                   containerHeight={250}
                   animationDelay={1}
                   animationStagger={0.08}
@@ -313,7 +318,6 @@ function App() {
                       loop
                       muted
                       playsInline
-                      controls
                     />
                   </div>
                 </div>
@@ -324,7 +328,7 @@ function App() {
                 <div className="space-y-6 ">
                   <div>
                     <h4 className="text-2xl font-medium mb-1">Email</h4>
-                    <p className="text-gray-300">kashyapsonraj@gmail.com</p>
+                    <p className="text-gray-300">kashyap@xziamedia.com</p>
                   </div>
 
                   <div>
