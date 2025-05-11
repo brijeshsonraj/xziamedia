@@ -58,6 +58,8 @@ function App() {
                 playsInline
                 controls
                 controlsList="nofullscreen"
+                preload="auto"
+                loading="lazy"
               />
             </div>
           </div>
@@ -134,6 +136,8 @@ function App() {
                     playsInline
                     controls
                     controlsList="nofullscreen"
+                    preload="auto"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -153,6 +157,8 @@ function App() {
                     playsInline
                     controls
                     controlsList="nofullscreen"
+                    preload="auto"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -172,6 +178,8 @@ function App() {
                     playsInline
                     controls
                     controlsList="nofullscreen"
+                    preload="auto"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -191,6 +199,8 @@ function App() {
                     playsInline
                     controls
                     controlsList="nofullscreen"
+                    preload="auto"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -318,6 +328,8 @@ function App() {
                       loop
                       muted
                       playsInline
+                      preload="auto"
+                      loading="lazy"
                     />
                   </div>
                 </div>
