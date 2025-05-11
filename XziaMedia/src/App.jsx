@@ -148,8 +148,8 @@ function App() {
                     autoPlay
                     loop
                     muted
-                    controls
                     playsInline
+                    controls
                   />
                 </div>
               </div>
@@ -167,6 +167,7 @@ function App() {
                     loop
                     muted
                     playsInline
+                    controls
                   />
                 </div>
               </div>
@@ -184,6 +185,7 @@ function App() {
                     loop
                     muted
                     playsInline
+                    controls
                   />
                 </div>
               </div>
@@ -311,6 +313,7 @@ function App() {
                       loop
                       muted
                       playsInline
+                      controls
                     />
                   </div>
                 </div>
