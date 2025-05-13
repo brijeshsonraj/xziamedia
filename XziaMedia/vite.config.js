@@ -9,5 +9,8 @@ export default defineConfig({
     host: '0.0.0.0', // Bind to all interfaces
     port: 5173,      // Optional: Specify the port
     allowedHosts: ['xziamedia.com'], // Add your domain here
-  }
+  },
+  optimizeDeps: {
+    include: ['react-intersection-observer'],
+  },
 })
