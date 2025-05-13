@@ -71,6 +71,14 @@ function App() {
     triggerOnce: true,
     threshold: 0.2,
   });
+  const { ref: experienceRef, inView: experienceInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: testimonialRef, inView: testimonialInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   return (
     <div className="relative bg-black min-h-screen">
@@ -171,16 +179,28 @@ function App() {
         <section id="sample-work" className=" py-20 px-4  text-white">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
             {/* Left Column - Title */}
-            <div className="md:w-1/3">
+            <motion.div
+              className="md:w-1/3"
+              initial={{ opacity: 0, x: -150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <h2 className="text-5xl md:text-6xl font-bold leading-tight">
                 Sample <span className="italic">Work.</span>
               </h2>
-            </div>
+            </motion.div>
 
             {/* Right Column - Work Samples */}
             <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
               {/* First Work Sample */}
-              <div className="flex flex-col items-center">
+              <motion.div
+                className="flex flex-col items-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <p className="text-xl font-medium mb-4 opacity-90 tracking-wide text-center">
                   01 Interactive Explanation Videos
                 </p>
@@ -198,10 +218,16 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-              </div>
+              </motion.div>
 
               {/* Second Work Sample */}
-              <div className="flex flex-col items-center">
+              <motion.div
+                className="flex flex-col items-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <p className="text-xl font-medium mb-4 opacity-90 tracking-wide text-center">
                   02 3-D Fast Pace Creative Edits
                 </p>
@@ -219,10 +245,16 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-              </div>
+              </motion.div>
 
               {/* Third Work Sample */}
-              <div className="flex flex-col items-center">
+              <motion.div
+                className="flex flex-col items-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <p className="text-xl font-medium mb-4 opacity-90 tracking-wide text-center">
                   03 Smooth Flow Edits
                 </p>
@@ -240,10 +272,16 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-              </div>
+              </motion.div>
 
               {/* Fourth Work Sample */}
-              <div className="flex flex-col items-center">
+              <motion.div
+                className="flex flex-col items-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <p className="text-xl font-medium mb-4 opacity-90 tracking-wide text-center">
                   04 Motion Graphics
                 </p>
@@ -261,20 +299,33 @@ function App() {
                     loading="lazy"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
-        <div className=" text-white  flex items-center justify-center py-20 px-4">
+        <div
+          ref={testimonialRef} // Ensure the ref is applied here
+          className="text-white flex items-center justify-center py-20 px-4"
+        >
           <div className="max-w-6xl w-full flex flex-col lg:flex-row">
             {/* Left side - Title and Social Profiles */}
-            <div className="lg:w-1/2 space-y-8 mb-8 lg:mb-0">
+            <motion.div
+              className="lg:w-1/2 space-y-8 mb-8 lg:mb-0"
+              initial={{ opacity: 0, x: -150 }}
+              animate={testimonialInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div>
                 <h1 className="text-7xl font-bold">Client</h1>
                 <h2 className="text-7xl font-light italic">Testimonial.</h2>
               </div>
 
-              <div className="space-y-4">
+              <motion.div
+                className="space-y-4"
+                initial={{ opacity: 0, y: 150 }}
+                animate={testimonialInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 {/* Social Profile Cards */}
                 <BounceCards
                   className="custom-bounceCards"
@@ -287,20 +338,30 @@ function App() {
                   transformStyles={transformStyles}
                   enableHover={true}
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right side - Client photo and testimonial */}
             <div className="lg:w-1/2 flex flex-col items-center lg:items-end">
-              <div className="rounded-xl overflow-hidden mb-6 w-64 h-64">
+              <motion.div
+                className="rounded-xl overflow-hidden mb-6 w-64 h-64"
+                initial={{ opacity: 0, y: -150 }}
+                animate={testimonialInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <img
                   src="src\assets\download.jpg"
                   alt="Client"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
 
-              <div className="text-right">
+              <motion.div
+                className="text-right"
+                initial={{ opacity: 0, x: 150 }}
+                animate={testimonialInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <h3 className="text-5xl font-bold mb-4">Jake Gordon</h3>
                 <p className="text-xl max-w-md">
                   He helped grow my account from 5K to 50K followers in just two
@@ -308,16 +369,24 @@ function App() {
                   insight are outstanding. Working with him was an excellent
                   experience.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
 
         {/* Experience Section */}
-        <div className="text-white  flex items-center justify-center  py-20 px-4">
+        <div
+          ref={experienceRef}
+          className="text-white flex items-center justify-center  py-20 px-4"
+        >
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-between">
             {/* Left side - Spiral Graphic */}
-            <div className="flex justify-center md:justify-end mb-8 md:mb-0 w-full">
+            <motion.div
+              className="flex justify-center md:justify-end mb-8 md:mb-0 w-full"
+              initial={{ opacity: 0, x: -150 }}
+              animate={experienceInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div style={{ position: "relative", height: "250px" }}>
                 <TextPressure
                   text="EXPERIENCE"
@@ -332,10 +401,15 @@ function App() {
                   minFontSize={fontSize}
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right side - Experience Text */}
-            <div className="w-full ">
+            <motion.div
+              className="w-full"
+              initial={{ opacity: 0, x: 150 }}
+              animate={experienceInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl font-medium">Video Editing</h3>
@@ -349,7 +423,7 @@ function App() {
                   <p className="text-gray-300">2023-present, The Real World</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -364,7 +438,7 @@ function App() {
               <div className="flex items-center">
                 <motion.div
                   className="flex items-center"
-                  initial={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: -150 }}
                   animate={contactInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
@@ -378,7 +452,7 @@ function App() {
               <div className="flex justify-center md:justify-end">
                 <motion.div
                   className="rounded-2xl overflow-hidden max-w-md h-40 md:h-48"
-                  initial={{ opacity: 0, y: -50 }}
+                  initial={{ opacity: 0, y: -150 }}
                   animate={contactInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
@@ -394,7 +468,7 @@ function App() {
               <div className="flex items-center justify-center md:justify-start">
                 <motion.div
                   className="text-center md:text-left"
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 150 }}
                   animate={contactInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
@@ -417,7 +491,7 @@ function App() {
               <div className="flex justify-center items-center">
                 <motion.div
                   className="space-y-6"
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 150 }}
                   animate={contactInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
