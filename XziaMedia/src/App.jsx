@@ -3,6 +3,8 @@ import BounceCards from "./blocks/Components/BounceCards/BounceCards";
 import TextPressure from "./blocks/TextAnimations/TextPressure/TextPressure.jsx";
 import SplitText from "./blocks/TextAnimations/SplitText/SplitText.jsx";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
 function App() {
   const images = [
     "/src/assets/insta day2 followers.png",
@@ -37,6 +39,13 @@ function App() {
     // Cleanup listener on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const fadeUpAnimation = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: "easeOut" },
+  };
+
   return (
     <div className="relative bg-black min-h-screen">
       {/* Squares Background */}
@@ -52,7 +61,12 @@ function App() {
       <div className="relative z-20  text-white font-sans">
         {/* Hero Section */}
         <section className="  flex flex-col md:flex-row items-center justify-between py-30 px-8 md:px-16 lg:px-24">
-          <div className="md:w-5/12 flex justify-center mb-12 md:mb-0">
+          <motion.div
+            className="md:w-5/12 flex justify-center mb-12 md:mb-0"
+            initial={fadeUpAnimation.initial}
+            animate={fadeUpAnimation.animate}
+            transition={fadeUpAnimation.transition}
+          >
             <div className="border-white relative w-96 h-[35em] rounded-[40px] overflow-hidden shadow-lg border border-gray-700">
               <video
                 src="/src/assets/HOW TO TAKE BACK CONTROL_1.mp4"
@@ -67,13 +81,13 @@ function App() {
                 loading="lazy"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="md:w-6/12">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
               <SplitText
                 text="Xzia Media"
                 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
-                delay={150}
+                delay={50}
                 animationFrom={{
                   opacity: 0,
                   transform: "translate3d(0,50px,0)",
@@ -84,7 +98,6 @@ function App() {
                 rootMargin="-50px"
                 onLetterAnimationComplete={handleAnimationComplete}
               />
-              
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-lg">
               I create trending short-form video edits that elevate your brand
