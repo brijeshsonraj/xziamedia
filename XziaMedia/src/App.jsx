@@ -1,6 +1,7 @@
 import Squares from "./blocks/Backgrounds/Squares/Squares";
 import BounceCards from "./blocks/Components/BounceCards/BounceCards";
 import TextPressure from "./blocks/TextAnimations/TextPressure/TextPressure.jsx";
+import SplitText from "./blocks/TextAnimations/SplitText/SplitText.jsx";
 import { useEffect, useState } from "react";
 function App() {
   const images = [
@@ -15,6 +16,10 @@ function App() {
     "rotate(5deg) translate(70px)",
     "rotate(-5deg) translate(150px)",
   ];
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
+
   const [fontSize, setFontSize] = useState(getResponsiveFontSize());
 
   function getResponsiveFontSize() {
@@ -65,7 +70,21 @@ function App() {
           </div>
           <div className="md:w-6/12">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
-              Xzia Media
+              <SplitText
+                text="Xzia Media"
+                className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
+                delay={150}
+                animationFrom={{
+                  opacity: 0,
+                  transform: "translate3d(0,50px,0)",
+                }}
+                animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+                easing="easeOutCubic"
+                threshold={0.2}
+                rootMargin="-50px"
+                onLetterAnimationComplete={handleAnimationComplete}
+              />
+              
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-lg">
               I create trending short-form video edits that elevate your brand
