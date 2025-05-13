@@ -4,6 +4,7 @@ import TextPressure from "./blocks/TextAnimations/TextPressure/TextPressure.jsx"
 import SplitText from "./blocks/TextAnimations/SplitText/SplitText.jsx";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
   const images = [
@@ -45,6 +46,25 @@ function App() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.8, ease: "easeOut" },
   };
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Adjust the duration for smoothness
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy(); // Cleanup Lenis instance on unmount
+    };
+  }, []);
 
   return (
     <div className="relative bg-black min-h-screen">
