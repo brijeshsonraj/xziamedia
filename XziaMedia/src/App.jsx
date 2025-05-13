@@ -4,6 +4,7 @@ import TextPressure from "./blocks/TextAnimations/TextPressure/TextPressure.jsx"
 import SplitText from "./blocks/TextAnimations/SplitText/SplitText.jsx";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Lenis from "@studio-freight/lenis";
 
 function App() {
@@ -65,6 +66,11 @@ function App() {
       lenis.destroy(); // Cleanup Lenis instance on unmount
     };
   }, []);
+
+  const { ref: contactRef, inView: contactInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   return (
     <div className="relative bg-black min-h-screen">
@@ -348,31 +354,51 @@ function App() {
         </div>
 
         {/* Contact Section */}
-        <div className="text-white  flex items-center justify-center py-20 px-4">
+        <div
+          ref={contactRef}
+          className="text-white flex items-center justify-center py-20 px-4"
+        >
           <div className="max-w-6xl w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Top Left - Text */}
               <div className="flex items-center">
-                <h2 className="text-6xl font-light">
-                  Stay <span className="italic">in Touch.</span>
-                </h2>
+                <motion.div
+                  className="flex items-center"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={contactInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  <h2 className="text-6xl font-light">
+                    Stay <span className="italic">in Touch.</span>
+                  </h2>
+                </motion.div>
               </div>
 
               {/* Top Right - Image */}
               <div className="flex justify-center md:justify-end">
-                <div className="rounded-2xl overflow-hidden max-w-md h-40 md:h-48">
+                <motion.div
+                  className="rounded-2xl overflow-hidden max-w-md h-40 md:h-48"
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={contactInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <img
-                    src="src\assets\sit_00000_00000.jpg"
+                    src="src/assets/sit_00000_00000.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </motion.div>
               </div>
 
               {/* Bottom Left - Logo/Video */}
               <div className="flex items-center justify-center md:justify-start">
-                <div className="text-center md:text-left">
-                  <div className="inline-block ">
+                <motion.div
+                  className="text-center md:text-left"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={contactInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  <div className="inline-block">
                     <video
                       src="src/assets/Search motion background.mp4"
                       className="rounded-xl border-white max-w-lg h-60 md:h-60 mb-4 object-cover "
@@ -384,12 +410,17 @@ function App() {
                       loading="lazy"
                     />
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Bottom Right - Contact Information */}
-              <div className="flex   justify-center items-center ">
-                <div className="space-y-6 ">
+              <div className="flex justify-center items-center">
+                <motion.div
+                  className="space-y-6"
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={contactInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <div>
                     <h4 className="text-2xl font-medium mb-1">Email</h4>
                     <p className="text-gray-300">kashyap@xziamedia.com</p>
@@ -399,7 +430,7 @@ function App() {
                     <h4 className="text-2xl font-medium mb-1">Phone</h4>
                     <p className="text-gray-300">+91 9104877051</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -411,4 +442,7 @@ function App() {
 
 export default App;
 
-// Savepoint created for the current state of the file.
+// Ensure `motion` is used in the file
+// The `motion` component is already used in the "Contact Section" and other sections, so no changes are needed to its usage.
+
+// If the error persists, it might be a linter configuration issue. Ensure the linter is correctly set up to recognize `motion` usage.
