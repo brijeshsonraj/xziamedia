@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Lenis from "@studio-freight/lenis";
+import BlurText from "./blocks/TextAnimations/BlurText/BlurText.jsx";
 
 function App() {
   const images = [
@@ -153,8 +154,23 @@ function App() {
         {/* About Section */}
         <section className="py-20 px-8 md:px-16 lg:px-24 ">
           <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto gap-12">
-            <div className="md:w-1/2 lg:w-5/12">
-              <h2 className="text-5xl font-bold mb-6">About Me</h2>
+            <motion.div
+              className="md:w-1/2 lg:w-5/12"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h2 className="text-5xl font-bold mb-6">
+                <BlurText
+                  text="About me"
+                  delay={150}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                  className="text-5xl font-bold mb-6"
+                />
+              </h2>
               <p className="text-lg">
                 I studied video marketing through The Real World, Andrew Tate's
                 online university, where I gained insights into content strategy
@@ -162,8 +178,14 @@ function App() {
                 creating dynamic anime edits and podcast highlights, developing
                 a strong foundation in storytelling, pacing, and visual impact.
               </p>
-            </div>
-            <div className="md:w-1/2 lg:w-5/12 flex justify-center">
+            </motion.div>
+            <motion.div
+              className="md:w-1/2 lg:w-5/12 flex justify-center"
+              initial={{ opacity: 0, x: 150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div className="z-10 border-white rounded-[40px] overflow-hidden shadow-lg border-2 w-96 h-[30em]">
                 <img
                   src="/src/assets/me.jpg"
@@ -171,7 +193,7 @@ function App() {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
