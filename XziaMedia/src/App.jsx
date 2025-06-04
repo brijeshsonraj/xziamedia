@@ -522,10 +522,10 @@ function App() {
                     <p className="text-gray-300">kashyap@xziamedia.com</p>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <h4 className="text-2xl font-medium mb-1">Phone</h4>
                     <p className="text-gray-300">+91 9104877051</p>
-                  </div>
+                  </div> */}
                 </motion.div>
               </div>
             </div>
