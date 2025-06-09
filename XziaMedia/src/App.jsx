@@ -444,6 +444,10 @@ function App() {
                   <h3 className="text-xl font-medium">Video Marketing</h3>
                   <p className="text-gray-300">2023-present, The Real World</p>
                 </div>
+                <div>
+                  <h3 className="text-xl font-medium">Crypto Investing</h3>
+                  <p className="text-gray-300">2024-present, The Real World</p>
+                </div>
               </div>
             </motion.div>
           </div>
