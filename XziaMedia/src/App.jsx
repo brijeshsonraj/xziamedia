@@ -91,7 +91,7 @@ function App() {
         borderColor="#fff"
         hoverFillColor="#222"
       />
-
+      
       {/* Content with black overlay */}
       <div className="relative z-20  text-white font-sans">
         {/* Hero Section */}
