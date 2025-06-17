@@ -3,6 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/src/assets/log6_00000.png" />
+    <!-- Calendly badge widget begin -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/kashyapsonraj/landing-call",
+          text: "Schedule time with me",
+          color: "#0069ff",
+          textColor: "#ffffff",
+        });
+      };
+    </script>
+    <!-- Calendly badge widget end -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xzia Media</title>
   </head>
@@ -15,7 +36,7 @@
           s = d.getElementsByTagName(t)[0];
         v.onload = function () {
           window.voiceflow.chat.load({
-            verify: { projectID: "6851255e7494e98e7225d070" },
+            verify: { projectID: "68515fa797ff2e07673062f9" },
             url: "https://general-runtime.voiceflow.com",
             versionID: "production",
             voice: {
