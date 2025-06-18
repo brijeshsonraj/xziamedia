@@ -91,7 +91,7 @@ function App() {
         borderColor="#fff"
         hoverFillColor="#222"
       />
-      
+
       {/* Content with black overlay */}
       <div className="relative z-20  text-white font-sans">
         {/* Hero Section */}
@@ -372,7 +372,7 @@ function App() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <img
-                  src="src\assets\download.jpg"
+                  src="/src/assets/download.jpg"
                   alt="Client"
                   className="w-full h-full object-cover"
                 />
@@ -483,7 +483,7 @@ function App() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                   <img
-                    src="src/assets/sit_00000_00000.jpg"
+                    src="/src/assets/sit_00000_00000.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
@@ -500,7 +500,7 @@ function App() {
                 >
                   <div className="inline-block">
                     <video
-                      src="src/assets/Search motion background.mp4"
+                      src="/src/assets/Search motion background.mp4"
                       className="rounded-xl border-white max-w-lg h-60 md:h-60 mb-4 object-cover "
                       autoPlay
                       loop
